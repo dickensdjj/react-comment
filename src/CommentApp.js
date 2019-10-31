@@ -14,7 +14,7 @@ class CommentApp extends Component {
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
     }
 
     handleSubmitComment (comment) {
