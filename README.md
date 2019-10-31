@@ -66,3 +66,18 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Coding Standard (Sequence)
+1. static 开头的类属性，如 defaultProps、propTypes。
+2. 构造函数，constructor。
+3. getter/setter（还不了解的同学可以暂时忽略）。
+4. 组件生命周期。
+5. _ 开头的私有方法。
+6. 事件监听方法，handle*。
+7. render*开头的方法，有时候 render() 方法里面的内容会分开到不同函数里面进行，这些函数都以 render* 开头。
+8. render() 方法
+
+# Coding Standard (Naming)
+1. private function begins with '_'
+2. eventHandler function begins with 'handle'
+3. addEventlistener to component by using 'on' ath the beginning

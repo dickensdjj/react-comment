@@ -3,12 +3,18 @@ import CommentInput from './CommentInput'
 import CommentList from './CommentList'
 
 class CommentApp extends Component {
-
     constructor() {
         super();
         this.state = {
-            comments: []
+            comments: [
+                {username: 'Jerry', content: 'Hello'},
+                {username: 'Tommy', content: 'Hello'},
+                {username: 'Lucy', content: 'Hello'},
+            ]
         }
+    }
+
+    componentWillMount() {
     }
 
     handleSubmitComment (comment) {
