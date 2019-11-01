@@ -16,13 +16,18 @@ class CommentInput extends Component {
     }
 
     handleContentChange (event) {
-        this.setState({content: event.target.value})
+        this.setState({
+            content: event.target.value
+        })
     }
 
     handleSubmit (event) {
         if (this.props.onSubmit) {
-            const {username, content} = this.state;
-            this.props.onSubmit({username, content});
+            this.props.onSubmit({
+                username: this.state.username,
+                content: this.state.content,
+                createdTime: +new Date()
+            });
         }
         this.setState({content: ''})
     }
@@ -48,7 +53,7 @@ class CommentInput extends Component {
 
     componentDidMount() {
         this.textarea.focus();
-        console.log('component inputlist did mount.')
+        console.log('component input list did mount.')
     }
 
     render() {

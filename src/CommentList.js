@@ -1,10 +1,22 @@
 import React, { Component } from 'react'
 import Comment from './Comment.js'
+import PropTypes from 'prop-types'
 
 class CommentList extends Component {
+    static propsType = {
+        comments: PropTypes.array,
+        onDeleteComment: PropTypes.func
+    };
+
     static defaultProps = {
         comments: []
     };
+
+    handleDeleteComment(index) {
+        if (this.props.onDeleteComment) {
+            this.props.onDeleteComment(index)
+        }
+    }
 
     render() {
         // This part is used to be old comment
@@ -15,11 +27,19 @@ class CommentList extends Component {
         // ];
 
         return (
-            <div>{this.props.comments.map((comment, i)=>{
-                return (
-                   <Comment comment={comment} key={i} />
-                )
-            })}</div>
+
+            <div>
+                {this.props.comments.map((comment, i)=>{
+                    return (
+                       <Comment
+                           comment={comment}
+                           key={i}
+                           index={i}
+                           onDeleteComment={this.handleDeleteComment.bind(this)}
+                       />
+                    )
+                })}
+            </div>
         )
     }
 }
