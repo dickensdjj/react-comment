@@ -66,6 +66,10 @@ class Comment extends Component {
                 <span className='comment-createdtime'>
                     {this.state.timeString}
                 </span>
+                <span onClick={this.handleDeleteComment.bind(this)}
+                    className='comment-delete'>
+                    Delete
+                </span>
             </div>
         )
     }
